@@ -1,0 +1,12 @@
+
+
+
+<ol>
+     @for (objectif of this.monService.objectifs; track $index) {
+        <li>
+            <a routerLink="/consultAct/{{$index}}">
+                    {{objectif}}
+            </a>
+    </li>
+    }
+</ol>

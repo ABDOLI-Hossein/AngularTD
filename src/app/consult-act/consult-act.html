@@ -1,0 +1,26 @@
+<p>consult-act works!</p>
+<p>Activite ID :{{  param }}</p>
+
+ <p>Contenu activité : 
+    @if (enModification) {
+    <input
+        type="text"
+        name="nouveauTexte"
+        [(ngModel)]="nouveauTexte"
+        value="{{ monService.objectifs[param] }}"
+    />
+    } @else {
+        {{ monService.objectifs[param] }}
+    }   
+</p>
+
+
+
+
+
+<button (click)="supprimeElem(param)" class="btn" style="background-color: red;">supprimeElem</button>
+@if(!enModification) {<button (click)="modeModif()" style="background-color: blue;">Modification</button>}
+<button (click)="modifElem(param, nouveauTexte)" style="background-color: green;">Sauvegarder</button>
+@if(param2 != null){
+    <p>Valeur du parametre transmis: </p>
+}

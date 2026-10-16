@@ -1,0 +1,37 @@
+<p>home works!</p>
+<div class="container color-dark">
+
+  <div class="col">
+    <p>Un élément de liste</p>
+  </div>
+
+  <div class="col">
+    <p>Ma liste d'éléments {{ nbItems }}</p>
+  </div>
+
+</div>
+
+<div class="container color-light">
+
+  <div class="col">
+    <p class="life-container">Un nouvel élément de liste</p>
+
+    <form>
+      <!-- <input type="text" class="txt"> -->
+      <input type="text" class="txt" [(ngModel)]="objectifText"     name="objectifText">
+
+      <input type="submit" [value]="btnText" class="btn" (click)="ajoutItem()">
+    </form>
+     <p>{{ objectifText }}</p>
+  </div>
+ 
+
+  <div class="col" >
+    <p class="life-container">Un bloc</p>
+    @for (objectif of this.monActService.objectifs; track $index) {
+        <p class="life-container" animate.enter="animation-ajout">{{objectif}} </p>
+    }
+   
+  </div>
+
+</div>
